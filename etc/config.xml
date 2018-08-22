@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Cammino_Pagarmecapturefix>
+            <version>0.0.1</version>
+        </Cammino_Pagarmecapturefix>
+    </modules>
+    <global>
+        <models>
+            <pagarmecapturefix>
+                <class>Cammino_Pagarmecapturefix_Model</class>
+            </pagarmecapturefix>
+        </models>
+    </global>
+    <frontend>
+        <events>
+            <checkout_onepage_controller_success_action>
+                <observers>
+                    <pagarmecapturefix_order_success>
+                        <class>pagarmecapturefix/observer</class>
+                        <method>orderSuccess</method>
+                    </pagarmecapturefix_order_success>
+                </observers>
+            </checkout_onepage_controller_success_action>
+            <checkout_multishipping_controller_success_action>
+                <observers>
+                    <pagarmecapturefix_multishipping_order_success>
+                        <class>pagarmecapturefix/observer</class>
+                        <method>orderSuccess</method>
+                    </pagarmecapturefix_multishipping_order_success>
+                </observers>
+            </checkout_multishipping_controller_success_action>
+        </events>
+    </frontend>
+</config>

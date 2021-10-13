@@ -10,12 +10,9 @@ class Cammino_Pagarmecapturefix_Model_Observer
     }
 
     // Observer responsible for get order when it finished
-    public function orderSuccess()
+    public function orderSuccess(Varien_Object $data)
     {    
-        $incrementId = Mage::getSingleton('checkout/session')->getLastRealOrderId();
-
-        $order = Mage::getModel('sales/order');
-        $order->loadByIncrementId($incrementId);
+        $order = $data->getOrder();
         $payment = $order->getPayment();
 
         if ($payment->getMethod() == "pagarme_cc") {

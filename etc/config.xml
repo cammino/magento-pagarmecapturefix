@@ -14,14 +14,14 @@
     </global>
     <frontend>
         <events>
-            <checkout_onepage_controller_success_action>
+            <sales_order_place_after>
                 <observers>
                     <pagarmecapturefix_order_success>
                         <class>pagarmecapturefix/observer</class>
                         <method>orderSuccess</method>
                     </pagarmecapturefix_order_success>
                 </observers>
-            </checkout_onepage_controller_success_action>
+            </sales_order_place_after>
             <checkout_multishipping_controller_success_action>
                 <observers>
                     <pagarmecapturefix_multishipping_order_success>
